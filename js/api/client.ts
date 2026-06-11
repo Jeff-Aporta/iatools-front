@@ -1,8 +1,7 @@
 (function () {
   "use strict";
-  const w = window as any;
-  const cfg = () => w.IAT.Config;
-  const auth = () => w.IAT.Auth;
+  const cfg = () => window.IAT.Config;
+  const auth = () => window.IAT.Auth;
 
   async function api<T>(path: string, init?: RequestInit): Promise<T> {
     const res = await fetch(cfg().apiUrl(path), {
@@ -14,8 +13,8 @@
     return data as T;
   }
 
-  w.IAT = w.IAT || {};
-  w.IAT.Api = {
+  window.IAT = window.IAT || ({} as IatNs);
+  window.IAT.Api = {
     status: (cap?: string) => api("/orchestrator/status" + (cap ? "?capability=" + cap : "")),
     syncKeys: (cap?: string) => api("/orchestrator/sync-keys", { method: "POST", body: JSON.stringify({ capability: cap }) }),
     rotationLog: (limit?: number) => api("/orchestrator/rotation-log?limit=" + (limit || 30)),

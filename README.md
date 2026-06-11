@@ -26,7 +26,7 @@ Panel de **monitoreo y operación del orquestador IA**: estado de slots por capa
 - **Log de rotación**: historial reciente de cambios de clave.
 - **Credenciales**: listado de keys registradas (requiere sesión).
 - **LoginGate** integrado con **system-login** (`system-login:session`).
-- Toggle **API local / online** → `localhost:8787` o `iatools.jeffaporta.workers.dev`.
+- Toggle **API local / online** → `localhost:8784` o `iatools.jeffaporta.workers.dev`.
 
 LangLab y otros servicios consumen la misma API vía cliente HTTP en el backend Azure/Workers.
 
