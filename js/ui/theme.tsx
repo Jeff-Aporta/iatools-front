@@ -42,7 +42,38 @@
     });
   }
 
+  function LoginGate(props: { children: any }) {
+    const w = window as any;
+    const [ok, setOk] = React.useState(w.IAT.Auth.isLoggedIn());
+    const [user, setUser] = React.useState("");
+    const [pass, setPass] = React.useState("");
+    const [err, setErr] = React.useState("");
+
+    React.useEffect(() => {
+      const sync = () => setOk(w.IAT.Auth.isLoggedIn());
+      window.addEventListener(w.IAT.Auth.EVENT, sync);
+      window.addEventListener("storage", sync);
+      return () => { window.removeEventListener(w.IAT.Auth.EVENT, sync); window.removeEventListener("storage", sync); };
+    }, []);
+
+    if (ok) return props.children;
+
+    return React.createElement(MUI.Paper, { sx: { p: 4, maxWidth: 420, mx: "auto", mt: 4 } },
+      React.createElement(MUI.Typography, { variant: "h6", gutterBottom: true }, "Iniciar sesión"),
+      React.createElement(MUI.Typography, { variant: "body2", color: "text.secondary", sx: { mb: 2 } },
+        "Auth centralizado vía system-login."),
+      err ? React.createElement(MUI.Alert, { severity: "error", sx: { mb: 2 } }, err) : null,
+      React.createElement(MUI.TextField, { label: "Usuario", fullWidth: true, size: "small", sx: { mb: 2 }, value: user, onChange: (e: any) => setUser(e.target.value) }),
+      React.createElement(MUI.TextField, { label: "Clave", type: "password", fullWidth: true, size: "small", sx: { mb: 2 }, value: pass, onChange: (e: any) => setPass(e.target.value) }),
+      React.createElement(MUI.Stack, { direction: "row", spacing: 1 },
+        React.createElement(MUI.Button, { variant: "contained", onClick: async () => {
+          setErr("");
+          try { await w.IAT.Auth.login(user, pass); setOk(true); } catch (e: any) { setErr(e.message); }
+        }}, "Entrar"),
+        React.createElement(MUI.Button, { href: w.IAT.Auth.LOGIN_URL, target: "_blank", rel: "noreferrer" }, "System Login")));
+  }
+
   const w = window as any;
   w.IAT = w.IAT || {};
-  w.IAT.UI = { useThemeMode, TargetSwitch };
+  w.IAT.UI = { useThemeMode, TargetSwitch, LoginGate };
 })();
