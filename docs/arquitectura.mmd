@@ -1,0 +1,6 @@
+flowchart LR
+  IF[iatools-front]
+  ORCH[main-orchestrator]
+  API[iatools Worker]
+  IF -->|/api/orchestrator/*| ORCH --> API
+  IF -->|/api/credentials| ORCH --> API

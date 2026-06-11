@@ -4,18 +4,12 @@
 
 <h1 align="center">iatools-front</h1>
 
-<p align="center"><strong>Orquestador IA</strong> — rotación de API keys, slots por capacidad, log de eventos y credenciales LLM.</p>
+<p align="center"><strong>Herramientas de IA</strong> — chat, voz, claves y registro de uso.</p>
 
 ## Arquitectura
+![Diagrama de arquitectura](https://mermaid.ink/img/JSV7aW5pdDogeyJmbG93Y2hhcnQiOiB7ImN1cnZlIjogInN0ZXBBZnRlciIsICJodG1sTGFiZWxzIjogdHJ1ZSwgIm5vZGVTcGFjaW5nIjogNDQsICJyYW5rU3BhY2luZyI6IDUyLCAicGFkZGluZyI6IDE4fX19JSUKZmxvd2NoYXJ0IExSCiAgSUZbaWF0b29scy1mcm9udF0KICBPUkNIW21haW4tb3JjaGVzdHJhdG9yXQogIEFQSVtpYXRvb2xzIFdvcmtlcl0KICBJRiAtLT58L2FwaS9vcmNoZXN0cmF0b3IvKnwgT1JDSCAtLT4gQVBJCiAgSUYgLS0-fC9hcGkvY3JlZGVudGlhbHN8IE9SQ0ggLS0-IEFQSQ==)
 
-```mermaid
-flowchart LR
-  IF[iatools-front]
-  ORCH[main-orchestrator]
-  API[iatools Worker]
-  IF -->|/api/orchestrator/*| ORCH --> API
-  IF -->|/api/credentials| ORCH --> API
-```
+> **Fuente del diagrama:** [`docs/arquitectura.mmd`](docs/arquitectura.mmd) — editar el `.mmd`; regenerar imagen: `node scripts/mermaid-ink-url.mjs iatools/frontend/docs/arquitectura.mmd` (desde `apps/`).
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-2ea44f?logo=githubpages&logoColor=white)](https://jeff-aporta.github.io/iatools-front/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
