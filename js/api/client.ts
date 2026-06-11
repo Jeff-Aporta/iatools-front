@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  /** iatools — /orchestrator/* y /api/credentials vía gateway. */
+  /** iatools — /api/orchestrator/* y /api/credentials vía gateway. */
   const cfg = () => window.IAT.Config;
   const auth = () => window.IAT.Auth;
 
@@ -16,10 +16,10 @@
 
   window.IAT = window.IAT || ({} as IatNs);
   window.IAT.Api = {
-    status: (cap?: string) => api("/orchestrator/status" + (cap ? "?capability=" + cap : "")),
-    syncKeys: (cap?: string) => api("/orchestrator/sync-keys", { method: "POST", body: JSON.stringify({ capability: cap }) }),
-    rotationLog: (limit?: number) => api("/orchestrator/rotation-log?limit=" + (limit || 30)),
-    models: () => api("/orchestrator/models"),
+    status: (cap?: string) => api("/api/orchestrator/status" + (cap ? "?capability=" + cap : "")),
+    syncKeys: (cap?: string) => api("/api/orchestrator/sync-keys", { method: "POST", body: JSON.stringify({ capability: cap }) }),
+    rotationLog: (limit?: number) => api("/api/orchestrator/rotation-log?limit=" + (limit || 30)),
+    models: () => api("/api/orchestrator/models"),
     credentials: () => api("/api/credentials"),
   };
 })();

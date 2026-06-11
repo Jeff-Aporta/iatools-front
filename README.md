@@ -6,6 +6,17 @@
 
 <p align="center"><strong>Orquestador IA</strong> — rotación de API keys, slots por capacidad, log de eventos y credenciales LLM.</p>
 
+## Arquitectura
+
+```mermaid
+flowchart LR
+  IF[iatools-front]
+  ORCH[main-orchestrator]
+  API[iatools Worker]
+  IF -->|/api/orchestrator/*| ORCH --> API
+  IF -->|/api/credentials| ORCH --> API
+```
+
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-live-2ea44f?logo=githubpages&logoColor=white)](https://jeff-aporta.github.io/iatools-front/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Cloudflare Workers](https://img.shields.io/badge/API-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white)](https://github.com/Jeff-Aporta/iatools-back)
