@@ -16,6 +16,10 @@ Panel de **monitoreo y operación del orquestador IA**: estado de slots por capa
 
 **https://jeff-aporta.github.io/iatools-front/**
 
+## Vista previa
+
+![LoginGate del orquestador IA](./docs/gh-pages.png)
+
 ## Qué hace
 
 - **Estado del orquestador**: slots activos, leases y capacidad por tipo de uso.
