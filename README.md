@@ -26,19 +26,19 @@ Panel de **monitoreo y operación del orquestador IA**: estado de slots por capa
 - **Log de rotación**: historial reciente de cambios de clave.
 - **Credenciales**: listado de keys registradas (requiere sesión).
 - **LoginGate** integrado con **system-login** (`system-login:session`).
-- Toggle **API local / online** → `localhost:8784` o `iatools.jeffaporta.workers.dev`.
+- Toggle **orquestador local / producción** → `localhost:8780` o `main-orchestrator.jeffaporta.workers.dev` (enruta a iatools).
 
 LangLab y otros servicios consumen la misma API vía cliente HTTP en el backend Azure/Workers.
 
 ## Desarrollo local
 
-Sirve la carpeta raíz (`npx serve .`) y levanta [`iatools-back`](https://github.com/Jeff-Aporta/iatools-back) con `npm run dev` si usas el switch local.
+Sirve la carpeta raíz (`npx serve .`) y levanta el **gateway** langlab (`apps/langlab/backend`, `:8780`) en modo local.
 
 ## Repos relacionados
 
 | Repo | Rol |
 |------|-----|
-| [iatools-back](https://github.com/Jeff-Aporta/iatools-back) | Orquestador API (privado) |
-| [iatools-front](https://github.com/Jeff-Aporta/iatools-front) | Este panel (público, GH Pages) |
+| [iatools-back](https://github.com/Jeff-Aporta/iatools-back) | API Worker Cloudflare |
+| [iatools-front](https://github.com/Jeff-Aporta/iatools-front) | Este panel (GH Pages) |
 
 MIT · [Jeff-Aporta](https://github.com/Jeff-Aporta)

@@ -1,5 +1,6 @@
 (function () {
   "use strict";
+  /** iatools — /orchestrator/* y /api/credentials vía gateway. */
   const cfg = () => window.IAT.Config;
   const auth = () => window.IAT.Auth;
 
