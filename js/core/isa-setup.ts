@@ -4,7 +4,7 @@
     ns: "IAT",
     app: "iatools-front",
     theme: { lsKey: "iatools:theme" },
-    widgets: { targetStyle: "switch" },
+    widgets: { targetStyle: "chip" },
     loginGate: "inline",
   });
 })();
