@@ -30,7 +30,7 @@
 - **Log de rotación**: historial reciente de cambios de clave.
 - **Credenciales**: listado de keys registradas (requiere sesión).
 - **LoginGate** integrado con **system-login**.
-- Toggle **orquestador local / producción** → `main-orchestrator.jeffaporta.workers.dev`.
+- Toggle **local / producción** con TargetSwitch (gateway en `front-shared`).
 
 ## Metadatos
 
@@ -40,7 +40,7 @@ Icono: `mdi:robot-outline` · tema `#e65100` · [`JeffAppMeta`](https://github.c
 
 ```bash
 npx serve .
-# main-orchestrator en :8780
+# TargetSwitch → modo local si desarrollas backends en wrangler dev
 ```
 
 ## Repos relacionados
