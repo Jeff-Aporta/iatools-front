@@ -21,16 +21,9 @@
 
 - **Estado de claves**: slots activos, leases y capacidad por tipo de uso
 - **Log de rotación**: historial reciente de cambios de clave
-- **Credenciales**: listado de keys registradas (requiere sesión)
-- **Login** integrado antes de consultar datos sensibles
-- **Tema** claro/oscuro y modo local o producción
+- **Credenciales**: listado de keys registradas
+- **Tema** claro/oscuro
 
 Icono: `mdi:robot-outline` · tema `#e65100`
-
-## Vista local
-
-```bash
-npx serve .
-```
 
 MIT · [Jeff-Aporta](https://github.com/Jeff-Aporta)
