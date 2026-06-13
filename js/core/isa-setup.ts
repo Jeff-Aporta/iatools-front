@@ -3,7 +3,7 @@
   window.ISAFront.registerApp({
     ns: "IAT",
     app: "iatools-front",
-    theme: { lsKey: "iatools:theme" },
+    theme: true,
     widgets: { targetStyle: "chip" },
     loginGate: "inline",
   });

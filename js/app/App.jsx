@@ -54,7 +54,7 @@
         </MUI.Stack>
         <MUI.Grid container spacing={2}>
           <MUI.Grid size={{ xs: 12, md: 7 }}>
-            <MUI.Paper sx={{ p: 2, maxHeight: 420, overflow: "auto" }}>
+            <MUI.Paper variant="outlined" className="isa-glass-card" sx={{ p: 2, maxHeight: 420, overflow: "auto" }}>
               <MUI.Typography variant="subtitle1" gutterBottom>Credenciales en rotación</MUI.Typography>
               <MUI.Table size="small" stickyHeader>
                 <MUI.TableHead>
@@ -80,7 +80,7 @@
             </MUI.Paper>
           </MUI.Grid>
           <MUI.Grid size={{ xs: 12, md: 5 }}>
-            <MUI.Paper sx={{ p: 2, mb: 2, maxHeight: 200, overflow: "auto" }}>
+            <MUI.Paper variant="outlined" className="isa-glass-card" sx={{ p: 2, mb: 2, maxHeight: 200, overflow: "auto" }}>
               <MUI.Typography variant="subtitle1" gutterBottom>Credenciales</MUI.Typography>
               {creds.map((c) => (
                 <MUI.Typography key={String(c.nombre)} variant="body2">
@@ -88,7 +88,7 @@
                 </MUI.Typography>
               ))}
             </MUI.Paper>
-            <MUI.Paper sx={{ p: 2, maxHeight: 220, overflow: "auto" }}>
+            <MUI.Paper variant="outlined" className="isa-glass-card" sx={{ p: 2, maxHeight: 220, overflow: "auto" }}>
               <MUI.Typography variant="subtitle1" gutterBottom>Rotación reciente</MUI.Typography>
               {log.slice(0, 8).map((r) => (
                 <MUI.Typography key={String(r.ILOG)} variant="caption" display="block">

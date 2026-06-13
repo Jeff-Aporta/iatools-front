@@ -23,5 +23,3 @@
 - **Log de rotación**: historial reciente de cambios de clave
 - **Credenciales**: listado de keys registradas
 - **Tema** claro/oscuro
-
-Icono: `mdi:robot-outline` · tema `#e65100`
