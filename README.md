@@ -25,5 +25,3 @@
 - **Tema** claro/oscuro
 
 Icono: `mdi:robot-outline` · tema `#e65100`
-
-MIT · [Jeff-Aporta](https://github.com/Jeff-Aporta)
