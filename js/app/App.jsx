@@ -102,7 +102,7 @@
     );
 
     return (
-      <Shell ns="IAT" title="Herramientas de IA" icon="mdi:robot-outline" loginGate>
+      <Shell ns="IAT" loginGate>
         {panel}
       </Shell>
     );
