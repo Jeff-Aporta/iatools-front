@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "title": "IA Tools — Jeff-Aporta",
+    "applicationName": "IA Tools",
+    "description": "Herramientas de IA: chat, voz, claves y registro de uso.",
+    "keywords": "IA, LLM, API keys, Groq, rotación, iatools, Jeff-Aporta",
+    "themeColor": "#e65100",
+    "themeLsKey": "iatools:theme",
+    "icon": "mdi:robot-outline",
+    "canonical": "https://jeff-aporta.github.io/iatools-front/",
+    "ogSiteName": "Jeff-Aporta — IA Tools",
+    "ogTitle": "IA Tools — Jeff-Aporta",
+    "imageAlt": "IA Tools — credenciales y chat"
+  },
+  "styles": [
+    "shared-base",
+    "shared-feedback",
+    "fonts-google"
+  ],
+  "libs": []
+}
