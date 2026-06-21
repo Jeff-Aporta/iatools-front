@@ -38,15 +38,21 @@
       return () => window.removeEventListener(window.IAT.Auth.EVENT, h);
     }, [reload]);
 
-    const caps = ["responses", "speech2text", "text2speech", "embeddings", "rerank", "proofread", "chat", "whisper"];
+    const caps = [
+      { id: "responses", label: "responses", icon: "mdi:message-reply-text-outline" },
+      { id: "speech2text", label: "speech2text", icon: "mdi:microphone-outline" },
+      { id: "text2speech", label: "text2speech", icon: "mdi:volume-high" },
+      { id: "embeddings", label: "embeddings", icon: "mdi:vector-combine" },
+      { id: "rerank", label: "rerank", icon: "mdi:sort-variant" },
+      { id: "proofread", label: "proofread", icon: "mdi:spellcheck" },
+      { id: "chat", label: "chat", icon: "mdi:chat-outline" },
+      { id: "whisper", label: "whisper", icon: "mdi:ear-hearing" },
+    ];
 
     const panel = (
       <MUI.Container maxWidth="lg" sx={{ py: 2 }}>
         {err ? <MUI.Alert severity="error" sx={{ mb: 2 }}>{err}</MUI.Alert> : null}
         <MUI.Stack direction="row" spacing={1} sx={{ mb: 2, flexWrap: "wrap" }}>
-          <MUI.Tabs value={cap} onChange={(_e, v) => setCap(v)} variant="scrollable">
-            {caps.map((c) => <MUI.Tab key={c} value={c} label={c} />)}
-          </MUI.Tabs>
           <MUI.Button variant="outlined" disabled={loading} onClick={async () => { await window.IAT.Api.syncKeys(cap); reload(); }}>
             Sincronizar credenciales
           </MUI.Button>
@@ -102,7 +108,11 @@
     );
 
     return (
-      <Shell ns="IAT" loginGate>
+      <Shell
+        ns="IAT"
+        loginGate
+        navRows={[{ id: "cap", tier: "primary", value: cap, onChange: setCap, tabs: caps }]}
+      >
         {panel}
       </Shell>
     );

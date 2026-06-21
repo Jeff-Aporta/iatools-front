@@ -17,5 +17,16 @@
     "shared-feedback",
     "fonts-google"
   ],
-  "libs": []
+  "libs": [],
+  "readme": {
+    "tagline": "chat, voz, claves y registro de uso.",
+    "badges": ["github-pages", "react"],
+    "preview": { "path": "docs/gh-pages.png", "alt": "Panel de herramientas IA" },
+    "features": [
+      "**Estado de claves**: slots activos, leases y capacidad por tipo de uso",
+      "**Log de rotación**: historial reciente de cambios de clave",
+      "**Credenciales**: listado de keys registradas",
+      "**Tema** claro/oscuro"
+    ]
+  }
 }
